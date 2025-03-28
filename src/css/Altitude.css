@@ -1,0 +1,18 @@
+.altitude-wrapper {
+ 
+}
+
+.altitude-container {
+    display: flex;
+    flex-direction: row-reverse ;
+    grid: 0;
+}
+
+.altitude-tape {
+    height: 300px;
+}
+
+.altitude-arrow {
+    margin-top: 262.5px;
+    height: 25px;
+} 

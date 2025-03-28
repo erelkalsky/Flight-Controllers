@@ -2,6 +2,7 @@ import React from 'react';
 import { FlightObject } from '../types/FlightObject';
 import Compass from '../components/Compass';
 import Adi from '../components/Adi';
+import Altitude from '../components/Altitude';
 import '../css/VisualScreen.css';
 
 interface VisualScreenProps {
@@ -21,6 +22,9 @@ function VisualScreen({ flightData }: VisualScreenProps) {
           </div>
           <div className="instrument">
             <Adi pitch={flightData.adi} />
+          </div>
+          <div className="instrument">
+            <Altitude altitude={flightData.altitude} />
           </div>
         </div>
       ) : (
