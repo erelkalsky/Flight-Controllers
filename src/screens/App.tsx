@@ -46,6 +46,7 @@ function App() {
         
         <div className="content">
           <Routes>
+            <Route path="/" element={<VisualScreen flightData={flightData} />} />
             <Route path="/visual" element={<VisualScreen flightData={flightData} />} />
             <Route path="/text" element={<TextScreen flightData={flightData} />} />
           </Routes>

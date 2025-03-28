@@ -1,18 +1,28 @@
 .altitude-wrapper {
- 
+  position: relative;
 }
 
 .altitude-container {
     display: flex;
-    flex-direction: row-reverse ;
-    grid: 0;
+    flex-direction: row;
+    position: relative;
+}
+
+.altitude-display {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
 }
 
 .altitude-tape {
     height: 300px;
+    position: relative;
 }
 
 .altitude-arrow {
-    margin-top: 262.5px;
-    height: 25px;
+    position: absolute;
+    left: 0;
+    height: 10px;
+    z-index: 2;
+    margin-left: 7.5px;
 } 

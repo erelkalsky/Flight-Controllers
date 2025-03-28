@@ -1,5 +1,6 @@
-import altitudeImage from '../images/altitude.png';
-import altitudeArrowImage from '../images/altitude_arrow.png';
+import React from 'react';
+import altitudeImage from '../images/altitud.png';
+import altitudeArrowImage from '../images/altitud_arrow.png';
 import '../css/Altitude.css';
 
 interface AltitudeProps {
@@ -7,8 +8,8 @@ interface AltitudeProps {
 }
 
 function Altitude({ altitude }: AltitudeProps) {
-  const topAltitude = 20.5;
-  const bottomAltitude = 276;
+  const topAltitude = 17.5;
+  const bottomAltitude = 262.5;
 
   const totalHeight = bottomAltitude - topAltitude;
   const part = totalHeight / 5; // 49px per visual part
@@ -36,31 +37,49 @@ function Altitude({ altitude }: AltitudeProps) {
     return marginTop;
   }
 
-
   // Calculate the position as a percentage (0-100)
   // We'll use 10% padding at top and bottom to account for the extra space
 
   return (
     <div className="altitude-wrapper">
       <div className="altitude-container">
-        <div className="altitude-display">
-          <img 
-            src={altitudeArrowImage} 
-            alt="Altitude Arrow" 
-            className="altitude-arrow"
-            style={{
-              marginTop: `${altitudeArrowY}px`
-            }}
-          />
-          <img 
-            src={altitudeImage} 
-            alt="Altitude Tape" 
-            className="altitude-tape"
-          />
-        </div>
+        <img 
+          src={altitudeImage} 
+          alt="Altitude Tape" 
+          className="altitude-tape"
+        />
+        <img 
+          src={altitudeArrowImage} 
+          alt="Altitude Arrow" 
+          className="altitude-arrow"
+          style={{
+            marginTop: `${altitudeArrowY}px`
+          }}
+        />
       </div>
     </div>
   );
 }
 
 export default Altitude; 
+
+
+
+.altitude-wrapper {
+ 
+}
+
+.altitude-container {
+    display: flex;
+    flex-direction: row-reverse ;
+    grid: 0;
+}
+
+.altitude-tape {
+    height: 300px;
+}
+
+.altitude-arrow {
+    margin-top: 262.5px;
+    height: 25px;
+} 

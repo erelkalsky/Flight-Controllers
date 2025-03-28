@@ -1,4 +1,3 @@
-import React from 'react';
 import adiImage from '../images/adi.png';
 import '../css/Adi.css';
 

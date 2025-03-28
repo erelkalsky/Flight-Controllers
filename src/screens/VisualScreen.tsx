@@ -18,13 +18,13 @@ function VisualScreen({ flightData }: VisualScreenProps) {
       {flightData ? (
         <div className="instruments-container">
           <div className="instrument">
+            <Altitude altitude={flightData.altitude} />
+          </div>
+          <div className="instrument">
             <Compass degrees={flightData.his} />
           </div>
           <div className="instrument">
             <Adi pitch={flightData.adi} />
-          </div>
-          <div className="instrument">
-            <Altitude altitude={flightData.altitude} />
           </div>
         </div>
       ) : (

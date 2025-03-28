@@ -9,7 +9,7 @@ interface TextScreenProps {
 function TextScreen({ flightData }: TextScreenProps) {
   return (
     <div className="text-screen">
-      <h1>Flight Data</h1>
+      <h1>Text Display</h1>
       {flightData ? (
         <div className="flight-data">
           <div className="data-item">

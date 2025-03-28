@@ -1,6 +1,5 @@
-import React from 'react';
-import compassImage from '../images/compas.png';
-import compassArrowImage from '../images/compas_arrow.png';
+import compassImage from '../images/compass.png';
+import compassArrowImage from '../images/compass_arrow.png';
 import '../css/Compass.css';
 
 interface CompassProps {
@@ -16,7 +15,7 @@ function Compass({ degrees }: CompassProps) {
           alt="Compass"
           className="compass-image"
           style={{
-            transform: `rotate(${degrees}deg)`
+            transform: `rotate(${-degrees}deg)`
           }}
         />
         <img
