@@ -11,8 +11,10 @@ interface DialogProps {
 function Dialog({ isOpen, onClose, onSubmit }: DialogProps) {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
+  //if the dialog is close, return null
   if (!isOpen) return null;
 
+  //validate the input data
   const validateInput = (name: string, value: number): boolean => {
     switch (name) {
       case 'altitude':
@@ -43,6 +45,7 @@ function Dialog({ isOpen, onClose, onSubmit }: DialogProps) {
     e.preventDefault();
     setErrors({});
 
+    //get the input data from the form
     const formData = new FormData(e.currentTarget);
     const altitude = Number(formData.get('altitude'));
     const his = Number(formData.get('his'));
@@ -53,12 +56,13 @@ function Dialog({ isOpen, onClose, onSubmit }: DialogProps) {
     const isHisValid = validateInput('his', his);
     const isAdiValid = validateInput('adi', adi);
 
+    //if the input data is valid, submit the data
     if (isAltitudeValid && isHisValid && isAdiValid) {
       onSubmit({
         altitude,
         his,
         adi,
-      });
+      } as FlightObject);
     }
   };
 

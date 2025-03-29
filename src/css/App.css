@@ -54,6 +54,8 @@
 }
 
 .content {
+  display: flex;
   flex: 1;
+  height: fit-content;
   padding: 2rem;
 }

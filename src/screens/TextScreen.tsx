@@ -1,4 +1,3 @@
-import React from 'react';
 import { FlightObject } from '../types/FlightObject';
 import '../css/TextScreen.css';
 

@@ -7,21 +7,27 @@ interface AltitudeProps {
 }
 
 function Altitude({ altitude }: AltitudeProps) {
-  const topAltitude = 20.5;
-  const bottomAltitude = 276;
-
+  const topAltitude = 20.5; //minimun margin top if altitude is 3000
+  const bottomAltitude = 276; //maximum margin top if altitude is 0
   const totalHeight = bottomAltitude - topAltitude;
-  const part = totalHeight / 5; // 49px per visual part
-  
+
+  //calculate the height of each part
+  const part = totalHeight / 5;
+
   const altitudeArrowY = getMarginTop(altitude);
 
   function getMarginTop(altitude: number): number {  
-    const lowSectionHeight = part * 2;   // 98
-    const midSectionHeight = part;       // 49
-    const highSectionHeight = part * 2;  // 98
+    /*
+    In the altiude image there is 5 part beacuse the
+    space between 2000-3000 and 0-1000
+    is 2:1 with the space between 1000-2000
+    */
+    const lowSectionHeight = part * 2;
+    const midSectionHeight = part;
+    const highSectionHeight = part * 2;
   
     let marginTop: number;
-  
+    
     if (altitude <= 1000) {
       const ratio = altitude / 1000;
       marginTop = bottomAltitude - ratio * lowSectionHeight;
@@ -35,10 +41,6 @@ function Altitude({ altitude }: AltitudeProps) {
   
     return marginTop;
   }
-
-
-  // Calculate the position as a percentage (0-100)
-  // We'll use 10% padding at top and bottom to account for the extra space
 
   return (
     <div className="altitude-wrapper">
